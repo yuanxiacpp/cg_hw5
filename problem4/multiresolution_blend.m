@@ -19,8 +19,8 @@
 	col_left = round(col/2);
 	col_right = col - col_left;	
 
-	l_pyramid = [zeros(row, col_left, 3) ones(row, col_right, 3)];
-	r_pyramid = [ones(row, col_right, 3) zeros(row, col_left, 3)];
+	l_pyramid = [ones(row, col_left, 3) zeros(row, col_right, 3)];
+	r_pyramid = [zeros(row, col_right, 3) ones(row, col_left, 3)];
 
 	l_pyramid1 = imfilter(l_pyramid, H);
 	l_pyramid2 = imfilter(l_pyramid1, H);
