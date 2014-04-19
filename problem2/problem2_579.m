@@ -66,7 +66,7 @@ for p=1:1:C_length
     bin = bin_all(:,[p]);
 
     for i=1:1:bin_length
-        w = bin(i)/23;
+        w = bin(i)/23; %23 used to adjust arrow length
         quiver(C(p,1), C(p,2), w*cosd(i*36), w*sind(i*36));
     end
 end
