@@ -28,7 +28,7 @@ function [feature_row, feature_col] = harris(image)
 	for i=1:1:row
 		for j=1:1:col
 			R(i,j) = Ixx(i,j)*Iyy(i,j)-Ixy(i,j)^2 - 0.04*(Ixx(i,j)+Iyy(i,j))^2;
-			if (R(i,j) > 0.002)
+			if (R(i,j) > 0.2)
 				R_threshold(i,j) = 255;
 			end
 		end
@@ -61,5 +61,7 @@ function [feature_row, feature_col] = harris(image)
 
 		end
 	end
+
+	%imwrite(R_threshold, 'image2_feature_points.jpg');
 
 end

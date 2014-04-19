@@ -4,7 +4,8 @@ imgA=imread('prob1image1.jpg');
 imgB=imread('prob1image2.jpg');
 [featuresB, pointsB] = harris_512(imgB);
 
-
+imgA = rgb2gray(imgA);
+imgB = rgb2gray(imgB);
 
 % maxPts = 150;
 % ptThresh = 1e-3;
@@ -27,7 +28,6 @@ imgB=imread('prob1image2.jpg');
 %     'BlockSize', blockSize);
 
 % Match features which were found in the current and the previous frames
-
 
 indexPairs = matchFeatures(featuresA, featuresB, 'Metric', 'SSD');
 numMatchedPoints = cast(size(indexPairs, 2), 'int32');
